@@ -1,7 +1,6 @@
 ### 🔹 1. **Install Prerequisites**
 * **Node.js + npm** → [Download](https://nodejs.org/)
 * **MongoDB** → [Download](https://www.mongodb.com/try/download/community)
----
 ### 🔹 2. **Start MongoDB**
 * If MongoDB is installed locally, run it:
 ```bash
@@ -39,11 +38,7 @@ cd ../frontend
 ```bash
 npm install
 ```
-#### c. Create a `.env` file (if not present):
-```env
-REACT_APP_API_URL=http://localhost:5000
-```
-#### d. Start the frontend:
+#### c. Start the frontend:
 ```bash
 npm start
 ```
