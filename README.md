@@ -67,3 +67,130 @@ docker-compose up -d        # Start with updated containers
 29. **Check container health using `HEALTHCHECK` in Dockerfile.**
 30. **Use `docker save` and `docker load` to move an image to another system.**
 .
+
+---
+
+## 🟢 **Beginner Level Projects**
+
+### 1. **Simple To-Do App**
+
+**Description:** Build a CRUD (Create, Read, Update, Delete) app where users can manage tasks.
+
+* Create tasks with title and description.
+* Store and retrieve them from MongoDB.
+* Add routes for:
+
+  * `GET /tasks` (list all tasks)
+  * `POST /tasks` (create a task)
+  * `PUT /tasks/<id>` (update a task)
+  * `DELETE /tasks/<id>` (delete a task)
+* Use **Postman** to test the API.
+
+---
+
+### 2. **User Registration API**
+
+**Description:** Build an API for user signup with basic validation.
+
+* Fields: `name`, `email`, `password`
+* Hash passwords before storing (use `werkzeug.security`)
+* Store in MongoDB
+* Add route to get all users (excluding password)
+
+---
+
+## 🟡 **Intermediate Level Projects**
+
+### 3. **Blog Platform Backend**
+
+**Description:** Backend API for a blogging system.
+
+* Models: `User`, `Post`, `Comment`
+* Features:
+
+  * Users can create posts.
+  * Users can comment on any post.
+* Endpoints:
+
+  * `/posts` → Get all posts
+  * `/posts/<id>` → Get a single post with comments
+  * `/posts` (POST) → Add new post
+  * `/posts/<id>/comment` → Add comment
+
+---
+
+### 4. **Authentication System with JWT**
+
+**Description:** Secure a Flask + MongoDB app with **JWT authentication**.
+
+* Routes:
+
+  * `/register` (save user)
+  * `/login` (return token)
+  * `/profile` (protected route)
+* Use:
+
+  * `PyJWT` or `flask-jwt-extended`
+  * Password hashing
+
+---
+
+### 5. **Product Catalog API**
+
+**Description:** Create an API for managing product listings.
+
+* Product fields: `name`, `price`, `description`, `category`
+* MongoDB collections: `products`, `categories`
+* Add filtering route: `/products?category=shoes&min_price=100`
+* Add pagination to `/products` route
+
+---
+
+## 🔴 **Advanced Level Projects**
+
+### 6. **Flask + MongoDB + Docker Compose Project**
+
+**Description:** Containerize a Flask API app with MongoDB using `docker-compose`.
+
+* Build the app from a Dockerfile.
+* Define services in `docker-compose.yml`:
+
+  * `web`: Flask app
+  * `db`: MongoDB
+* Connect Flask to MongoDB via container hostname.
+* Use a volume to persist MongoDB data.
+* Add healthcheck.
+
+---
+
+### 7. **Real-Time Chat App (Flask + Socket.IO + MongoDB)**
+
+**Description:** A chat API where messages are stored in MongoDB.
+
+* Flask with `flask-socketio`
+* Users can join rooms and send messages
+* Store chat history in MongoDB
+* Emit new messages in real time
+* Add REST API to fetch chat history
+
+---
+
+### 8. **Flask Admin Dashboard with MongoDB**
+
+**Description:** Build a basic admin dashboard with:
+
+* User login (with admin role)
+* Add/view/delete products
+* View orders (saved in MongoDB)
+* Filter by status (Pending, Delivered)
+* Optional: Add frontend with Bootstrap
+---
+## 🧠 Bonus: Add-ons for All Projects
+
+* Use `Marshmallow` or `pydantic` for data validation.
+* Use `dotenv` for storing sensitive info.
+* Add Swagger UI for API docs (`flasgger`).
+* Add unit tests with `pytest` and `mongomock`.
+---
+
+
