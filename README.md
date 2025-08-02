@@ -30,6 +30,29 @@ docker-compose build        # Rebuild image from Dockerfile
 docker-compose down         # Stop and remove old containers
 docker-compose up -d        # Start with updated containers
 
+
+docker tag flask-mongo-app-flask-app your-dockerhub-username/flask-mongo-app:latest
+
+docker push your-dockerhub-username/flask-mongo-app:latest
+
+minikube start --driver=docker
+
+eval $(minikube docker-env)   # This switches Docker context to Minikube's internal one
+
+# Rebuild your image inside Minikube
+
+docker build -t flask-mongo-app:latest .
+
+kubectl apply -f mongo-deployment.yaml
+kubectl apply -f mongo-service.yaml
+
+kubectl apply -f flask-deployment.yaml
+kubectl apply -f flask-service.yaml
+
+minikube service flask-service
+
+http://127.0.0.1:30001
+
 1. **Check Docker version installed on your system.**
    * What command do you use?
 2. **List all Docker containers (running and stopped).**
