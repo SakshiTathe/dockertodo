@@ -54,7 +54,7 @@ minikube service flask-service
 
 kubectl logs <your-flask-pod-name>
 
-http://127.0.0.1:30001
+minikube service flask-service
 
 kubectl delete deployment flask-app
 kubectl delete deployment mongo
