@@ -43,15 +43,19 @@ eval $(minikube docker-env)   # This switches Docker context to Minikube's inter
 
 docker build -t flask-mongo-app:latest .
 
-kubectl apply -f mongo-deployment.yaml
+kubectl apply -f mongo-deployment.yaml             
 kubectl apply -f mongo-service.yaml
 
-kubectl apply -f flask-deployment.yaml
+kubectl apply -f flask-deployment.yaml         
 kubectl apply -f flask-service.yaml
 
 minikube service flask-service
 
+kubectl logs <your-flask-pod-name>
+
 http://127.0.0.1:30001
+
+kubectl get pods, services
 
 1. **Check Docker version installed on your system.**
    * What command do you use?
