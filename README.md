@@ -36,6 +36,7 @@ docker tag flask-mongo-app-flask-app your-dockerhub-username/flask-mongo-app:lat
 docker push your-dockerhub-username/flask-mongo-app:latest
 
 minikube start --driver=docker
+minikube ssh -n minikube
 
 eval $(minikube docker-env)   # This switches Docker context to Minikube's internal one
 
@@ -55,7 +56,10 @@ kubectl logs <your-flask-pod-name>
 
 http://127.0.0.1:30001
 
-kubectl get pods, services
+kubectl delete deployment flask-app
+kubectl delete deployment mongo
+
+kubectl get pods, services, deployments
 
 1. **Check Docker version installed on your system.**
    * What command do you use?
