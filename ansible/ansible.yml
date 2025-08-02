@@ -1,0 +1,20 @@
+- hosts: flask_server
+  become: true
+  tasks:
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+        update_cache: yes
+
+    - name: Clone the Flask app
+      git:
+        repo: 'https://github.com/SakshiTathe/dockertodo.git'
+        dest: /opt/flask-mongo-app
+
+    - name: Build Docker image
+      shell: docker-compose build -t flask-mongose-app /opt/flask-mongo-app
+
+    - name: Run Flask app container
+      shell: docker run -d --name flask-app -p 5000:5000 flask-mongo-app
+
