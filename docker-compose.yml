@@ -9,6 +9,16 @@ services:
       - MONGO_URI=mongodb://mongo:27017/
     networks:
       - flask-mongo-net
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - flask-mongo-net
+volumes:
+  mongo-data:
 networks:
   flask-mongo-net:
     external: true
