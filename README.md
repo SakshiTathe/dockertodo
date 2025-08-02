@@ -1,55 +1,16 @@
-### 🔹 1. **Install Prerequisites**
-* **Node.js + npm** → [Download](https://nodejs.org/)
-* **MongoDB** → [Download](https://www.mongodb.com/try/download/community)
-### 🔹 2. **Start MongoDB**
-* If MongoDB is installed locally, run it:
-```bash
-mongod
-```
-This will run MongoDB on `mongodb://localhost:27017`.
----
-### 🔹 3. **Run Backend Locally**
+docker network ls
 
-#### a. Navigate to the backend folder:
+docker ps
 
-```bash
-cd backend
-```
+docker network create flask-mongo-net
 
-#### b. Install dependencies:
+docker network connect flask-mongo-net 2642e063914d
 
-```bash
-npm install
-```
-#### c. Start the backend:
+docker-compose up -d --build
 
-```bash
-npm start
-```
-Now your backend should be running at:
-👉 `http://localhost:5000`
----
-### 🔹 4. **Run Frontend Locally**
-#### a. Open new terminal & go to frontend folder:
-```bash
-cd ../frontend
-```
-#### b. Install dependencies:
-```bash
-npm install
-```
-#### c. Start the frontend:
-```bash
-npm start
-```
-This will launch the frontend at:
-👉 `http://localhost:3000`
----
----
-| Component | Command                                       |
-| --------- | --------------------------------------------- |
-| MongoDB   | `mongod`                                      |
-| Backend   | `npm install && npm start` inside `backend/`  |
-| Frontend  | `npm install && npm start` inside `frontend/` |
+docker exec -it 2642e063914d mongosh
 
----
+show dbs           // list all databases
+use testdb         // switch to your DB (used in your Flask app)
+show collections   // list collections
+db.items.find()    // show documents in "items" collection
