@@ -70,7 +70,7 @@ docker-compose up -d        # Start with updated containers
 
 ---
 
-## 🟢 **Beginner Level Projects**
+### **Beginner Level Projects**
 
 ### 1. **Simple To-Do App**
 
@@ -99,7 +99,7 @@ docker-compose up -d        # Start with updated containers
 
 ---
 
-## 🟡 **Intermediate Level Projects**
+### **Intermediate Level Projects**
 
 ### 3. **Blog Platform Backend**
 
@@ -146,7 +146,7 @@ docker-compose up -d        # Start with updated containers
 
 ---
 
-## 🔴 **Advanced Level Projects**
+### **Advanced Level Projects**
 
 ### 6. **Flask + MongoDB + Docker Compose Project**
 
