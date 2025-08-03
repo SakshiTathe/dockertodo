@@ -61,6 +61,11 @@ kubectl delete deployment mongo
 
 kubectl get pods, services, deployments
 
+minikube start --nodes 3 --driver=docker
+
+minikube ssh -n minikube         # Master
+minikube ssh -n minikube-m02     # Agent 1
+
 1. **Check Docker version installed on your system.**
    * What command do you use?
 2. **List all Docker containers (running and stopped).**
