@@ -66,6 +66,73 @@ minikube start --nodes 3 --driver=docker
 minikube ssh -n minikube         # Master
 minikube ssh -n minikube-m02     # Agent 1
 
+how to work with argoCD
+$ kubectl create namespace argocd
+$ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+$ kubectl get pods -n argocd
+$ kubectl port-forward svc/argocd-server -n argocd 8080:443 for local 
+$get password
+$ kubectl get secret argocd-initial-admin-secret -n argocd -o yaml  
+$ decode password  echo OXFzOTQwSzNFZVlWWmJjVw== | base64 --decode
+$ user name admin   9qs940K3EeYVZbcW
+
+================================================================== Setup Kubernetes using eksctl =================================================================
+# Install AWS CLI
+Refer--https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+$ sudo su
+$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+$ apt install unzip,   $ unzip awscliv2.zip
+$ sudo ./aws/install
+         OR
+$ sudo yum remove -y aws-cli
+$ pip3 install --user awscli
+$ sudo ln -s $HOME/.local/bin/aws /usr/bin/aws
+$ aws --version
+
+# Installing kubectl
+Refer--https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+$ sudo su
+$ curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.1/2023-04-19/bin/linux/amd64/kubectl
+$ ll , $ chmod +x ./kubectl  //Gave executable permisions
+$ mv kubectl /bin   //Because all our executable files are in /bin
+$ kubectl version --output=yaml
+
+# Installing  eksctl 
+Refer--https://github.com/eksctl-io/eksctl/blob/main/README.md#installation
+$ curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+$ cd /tmp
+$ ll
+$ sudo mv /tmp/eksctl /bin
+$ eksctl version
+
+# Setup Kubernetes using eksctl
+Refer--https://github.com/aws-samples/eks-workshop/issues/734
+eksctl create cluster --name virtualtechbox-cluster \
+--region ap-south-1 \
+--node-type t2.small \
+--nodes 3 \
+
+================================================================== ArgoCD Installation =================================================================
+$ kubectl create namespace argocd
+$ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+$ kubectl get pods -n argocd
+$ curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
+$ chmod +x /usr/local/bin/argocd
+$ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+$ kubectl get svc -n argocd
+$ kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
+$ echo XXXXXXX | base64 --decode
+
+================================================================== Add EKS Cluster to ArgoCD =================================================================
+$ argocd login a2255bb2bb33f438d9addf8840d294c5-785887595.ap-south-1.elb.amazonaws.com --username admin
+argocd login <ARGOCD_SERVER> --username admin --password <ADMIN_PASSWORD> --insecure
+argocd login localhost:8080 --username admin --password 9qs940K3EeYVZbcW --insecure
+
+$ argocd cluster list
+$ kubectl config get-contexts
+$ argocd cluster add i-08b9d0ff0409f48e7@virtualtechbox-cluster.ap-south-1.eksctl.io --name virtualtechbox-eks-cluster
+
+
 1. **Check Docker version installed on your system.**
    * What command do you use?
 2. **List all Docker containers (running and stopped).**
