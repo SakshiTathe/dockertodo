@@ -76,7 +76,7 @@ $ kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 $ decode password  echo OXFzOTQwSzNFZVlWWmJjVw== | base64 --decode
 $ user name admin   9qs940K3EeYVZbcW
 
-================================================================== Setup Kubernetes using eksctl =================================================================
+==================================== Setup Kubernetes using eksctl =====================
 # Install AWS CLI
 Refer--https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 $ sudo su
@@ -112,7 +112,7 @@ eksctl create cluster --name virtualtechbox-cluster \
 --node-type t2.small \
 --nodes 3 \
 
-================================================================== ArgoCD Installation =================================================================
+================================ ArgoCD Installation ==============================================
 $ kubectl create namespace argocd
 $ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 $ kubectl get pods -n argocd
@@ -123,7 +123,10 @@ $ kubectl get svc -n argocd
 $ kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 $ echo XXXXXXX | base64 --decode
 
-================================================================== Add EKS Cluster to ArgoCD =================================================================
+=============================== Add EKS Cluster to ArgoCD ========================================
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+argocd login localhost:8080 --username admin --password 9qs940K3EeYVZbcW --insecure
+
 $ argocd login a2255bb2bb33f438d9addf8840d294c5-785887595.ap-south-1.elb.amazonaws.com --username admin
 argocd login <ARGOCD_SERVER> --username admin --password <ADMIN_PASSWORD> --insecure
 argocd login localhost:8080 --username admin --password 9qs940K3EeYVZbcW --insecure
