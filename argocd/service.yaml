@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-service
+  name: flask-servicess
 spec:
   type: NodePort
   selector:
