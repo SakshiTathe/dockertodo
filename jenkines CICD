@@ -1,1 +1,11 @@
 https://youtu.be/jAmXEZspxv0?si=E2HjqIJQ78wh-IPg
+Master: jenkines
+slave : Docker
+apt update
+Install java on both the server
+Install jenkines on master
+Install docker on both
+open jenkines on browser
+on jenkines setup agent
+environment injrctor plugin
+create creadiationals of docker hub
