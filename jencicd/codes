@@ -15,12 +15,42 @@ install some tools on master
 docker
 jenkines master install java install
 eksctl: eks cluster , aws configure cli install cubectl, eksctl,
+Trivy
 ArgoCD
 jenkines worker setup
 OWSASP setup
 SonarQube
 
 open ports for every services
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
