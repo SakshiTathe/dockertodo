@@ -1,0 +1,13 @@
+https://youtu.be/5_s7EmZWz78?si=8uboefLxjxPaERNG
+
+devops CI CD project using Jenkins maven ansible and the kubernetes this is the flow diagram of our cicd
+project and our project will be divided into jobs first job would be CI job in which any change on
+the GitHub repository will initiate the job will trigger the job through the policy m Jenkins will pull 
+the code from the GitHub repository and it will build the artifact using the maven and then
+it will push the artifact to the ansible server on the NC pal server we will be having Docker installed and civil server
+will create the docker image using the artifact and then it will copy that Docker image to the Docker hub
+here our CI job will end once CA job is completed it will automatically trigger the CD job in the city job
+we will having one boost type server from where we will operate the kubernetesit will pull the docker image from 
+the docker hub and it will build the container over the kubernetes which is the AWS e case in our scenario
+and one city job is completed 
+
