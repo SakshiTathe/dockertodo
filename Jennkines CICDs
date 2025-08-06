@@ -1,0 +1,13 @@
+https://youtu.be/jv47sPxhUf8?si=NjT0lw0NrBkdmKz3
+install jenkins 
+install java
+enable jenkines
+
+for changing the the host name of the server
+hostname name
+cd/etc/hostname  create this file
+init 6 for rebooting
+open jenkines on browser
+
+
+
