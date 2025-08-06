@@ -4,3 +4,40 @@ trivy, OWASP,Sonar, Docker,
 Git repo, ArgoCD
 Prometheus,Graphana, Helm
 
+1} clone the project
+-  master key generation using terraform
+2] aws configure
+3] ssh-keygen
+4]terraform init
+5]terraform plan
+
+install some tools on master
+docker
+jenkines master install java install
+eksctl: eks cluster , aws configure cli install cubectl, eksctl,
+ArgoCD
+jenkines worker setup
+OWSASP setup
+SonarQube
+
+open ports for every services
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
