@@ -1,0 +1,31 @@
+https://youtu.be/jv47sPxhUf8?si=pkk0D3SLlzMZjnrI
+download jenkines
+open jenkines on browser
+install maven
+
+to access the application from anyware we can set environment variables
+go to .bash_profile --> pasete path of that bin, maven, java path
+source .bash_profile
+install maven, github plugin, groovy liberies plugin and configure jenkines for maven
+set tools jdk, maven on jenkines
+
+create maven job on jenkines
+install docker,
+add ssh server  in jenkines
+create maven job on jenkines
+provide git repo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
