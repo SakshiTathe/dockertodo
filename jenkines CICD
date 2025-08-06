@@ -6,6 +6,18 @@ Install java on both the server
 Install jenkines on master
 Install docker on both
 open jenkines on browser
-on jenkines setup agent
+on jenkines setup agent node
 environment injrctor plugin
-create creadiationals of docker hub
+create creadiationals of docker hub docker username token
+
+create jenkines pipeline with webboon integration
+create job
+in git go settings then go to webbook
+provide jenkines url send me every thing
+provide pipeline script
+
+
+
+
+
+
