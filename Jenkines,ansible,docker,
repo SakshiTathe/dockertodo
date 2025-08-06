@@ -9,5 +9,6 @@ will create the docker image using the artifact and then it will copy that Docke
 here our CI job will end once CA job is completed it will automatically trigger the CD job in the city job
 we will having one boost type server from where we will operate the kubernetesit will pull the docker image from 
 the docker hub and it will build the container over the kubernetes which is the AWS e case in our scenario
-and one city job is completed 
+and one city job is completed  
+install jenkies, java, javac pass: jenkins, jenkins  http://172.22.123.215:8080/
 
